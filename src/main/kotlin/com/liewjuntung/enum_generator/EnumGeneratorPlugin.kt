@@ -4,9 +4,7 @@ import com.google.gson.Gson
 import com.squareup.kotlinpoet.FunSpec
 import com.squareup.kotlinpoet.PropertySpec
 import com.squareup.kotlinpoet.TypeSpec
-import io.outfoxx.swiftpoet.FileSpec
-import io.outfoxx.swiftpoet.Modifier
-import io.outfoxx.swiftpoet.STRING
+import io.outfoxx.swiftpoet.*
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -46,6 +44,8 @@ class EnumGeneratorPlugin: Plugin<Project> {
                             .enumBuilder(className)
                             .addModifiers(Modifier.PUBLIC)
                             .addSuperType(STRING)
+                            .addSuperType(CASE_ITERABLE)
+
 
                         methodList.forEach {methodName ->
                             kotlinBuilder.addEnumConstant(methodName.camelToSnakeCase().toUpperCase(Locale.ROOT), TypeSpec.anonymousClassBuilder()

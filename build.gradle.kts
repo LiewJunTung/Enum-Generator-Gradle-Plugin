@@ -6,7 +6,7 @@ plugins {
 
 
 group = "com.liewjuntung"
-version = "0.0.1"
+version = "0.1.0"
 
 gradlePlugin {
     plugins {
@@ -33,7 +33,6 @@ pluginBundle {
             // id is captured from java-gradle-plugin configuration
             displayName = "A plugin to generate Kotlin and Swift enum classes for Flutter binding code."
             tags = listOf("kotlin", "swift", "flutter")
-            version = "0.0.1"
         }
     }
 }
