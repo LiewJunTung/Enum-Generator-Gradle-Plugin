@@ -16,7 +16,7 @@ class EnumGeneratorPlugin: Plugin<Project> {
     override fun apply(project: Project) {
         project.run {
             val extension = extensions.create("enumGenExtension", EnumGeneratorPluginExtension::class.java)
-            tasks.register("createFlutterMethods") {
+            tasks.register("generateEnums") {
                 it.doLast {
                     val jsonPath = extension.jsonPath ?: throw GradleException("jsonPath must not be null")
                     val swiftOutputPath = extension.swiftOutputPath ?: throw GradleException("swiftOutputPath must not be null")
